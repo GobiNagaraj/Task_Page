@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Task_Page</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function()
+        {
+	          $("#btn_Add").click(function()
+	          {
+	          	var newTextBoxDiv = $(document.createElement('div')).attr("id",'TextBoxDiv');
+	            newTextBoxDiv.after().html('<br><input type="text" placeholder="task_1" name="textbox" class="txt_hide" id="txt_box" value="" style=" margin-left:570px" >'+'<input type="button" name="Remove" id="but_Remv" class="btn_hide" value="Remove" style=" margin-left: 5px">');
+	            newTextBoxDiv.appendTo("#TextBoxesGroup");
+
+	          });
+	         $('body').on('click', '#but_Remv', function()
+	         {
+	         	 $('#TextBoxDiv').remove();
+			 });
+
+			 $("#remove").click(function()
+			 {
+			 	 $('#textbox').remove();  //$('#text').hidden();
+			 })
+
+		});
+</script>
+
+</head>
+
+<body style=" background-image: url(green.jpg); ">
+<link href="page.css" rel="stylesheet" type="text/css">
+		<form name="Page_1">
+  		<div class="add">
+        	<div class="add-user">
+         	<h1 align="center" style=" color: #66c2ff; font-size: 50px; " ><strong>Task Page</strong></h1>
+            </div><br>
+        <div class="btn-add" style=" margin-left: 600px">
+        <input type="button" name="Add" value="Add" id="btn_Add">
+        </div><br>
+
+         <div id="TextBoxesGroup" class="txt_btn">
+            <div class="txt-add" id="TextBoxDiv1" style="margin-left: 570px">
+    	   		<input type="text" id="textbox" class="txt_user" required/>
+    	   		<input type="button" name="Add" value="Remove" id="remove" class="btn_user" onClick = "this.style.visibility= 'hidden';">
+    	  	 </div><br>
+    	  </div>
+    	   <br>
+
+    	   <div class="btn-task" id="task" style=" margin-left: 605px"><br>
+    	   		<input type="button" id="btn_remove" value="Add Task">
+    	   </div>
+       	</div>
+    </form>
+
+</body>
+</html>
